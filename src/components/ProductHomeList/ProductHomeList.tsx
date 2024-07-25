@@ -1,0 +1,51 @@
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+
+import { api } from "@/utils/api";
+
+import { IProduct } from "@/interfaces/product.interface";
+
+import styles from "./product-home-list.module.css";
+
+import ProductHomeCard from "../ProductHomeCard/ProductHomeCard";
+import Button from "../Button/Button";
+
+const ProductHomeList = () => {
+  const router = useRouter();
+
+  const [products, setProducts] = useState<IProduct[]>([]);
+
+  const getProducts = useCallback(async () => {
+    const response = await api.get("/products");
+
+    const productData: IProduct[] = response.data;
+
+    setProducts(productData);
+  }, []);
+
+  const onHandleLoadMore = () => {
+    router.push("product/list");
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, [getProducts]);
+
+  return (
+    <div className={styles["product-home-list"]}>
+      <h1 className={styles["product-home-list__title"]}>
+        Descubra as fragrâncias que combinam com você
+      </h1>
+      <div className={styles["product-home-list__cards"]}>
+        {products?.map((product, index) => (
+          <ProductHomeCard product={product} key={`product_${index}`} />
+        ))}
+      </div>
+      <Button text="Carregar outros" onClick={onHandleLoadMore} />
+    </div>
+  );
+};
+
+export default ProductHomeList;

@@ -1,0 +1,16 @@
+.star-rating {
+    display: flex;
+    align-items: center;
+}
+
+.star-rating__icon {
+    color: #ffc222;
+    font-size: 0.75rem;
+}
+
+.star-rating__text {
+    font-size: 0.75rem;
+    padding-top: 0.25rem;
+    padding-left: 0.5rem;
+    align-self: center;
+}

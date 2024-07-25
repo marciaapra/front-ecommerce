@@ -1,0 +1,12 @@
+.product-home-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.product-home-list .product-home-list__cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

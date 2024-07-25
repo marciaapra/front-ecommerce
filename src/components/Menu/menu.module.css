@@ -1,0 +1,11 @@
+.menu {
+    padding: 5px;
+    margin: 5px;
+    font-size: 0.875rem;
+}
+
+.menu__button {
+    display: flex;
+    background-color: transparent;
+    border: none;
+}

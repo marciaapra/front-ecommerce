@@ -1,0 +1,24 @@
+.product-card {
+    display: flex;
+    flex: 1;
+    padding: 2rem;
+    word-break: break-word;
+    transition: 1s;
+}
+
+.product-card .product-card:hover{
+    zoom: 1.1;
+}
+
+.product-card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 2;
+    padding: 0 1.25rem;
+    width: 100%;
+}
+
+.product-card-info .product-card-info__text {
+    padding: 1rem;
+}

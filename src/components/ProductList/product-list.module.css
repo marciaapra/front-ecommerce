@@ -1,0 +1,17 @@
+.product-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 2rem 5rem;
+}
+
+.product-list .product-list__cards {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.product-list .product-list__button {
+    align-self: center;
+}
