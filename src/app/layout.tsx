@@ -5,7 +5,8 @@ import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
+import SaleModal from "@/components/SaleModal/SaleModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={inter.className}>
+        <SaleModal />
         <Navbar />
         {children}
       </body>
