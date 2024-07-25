@@ -1,5 +1,3 @@
-"use client";
-
 import { IProduct } from "@/interfaces/product.interface";
 
 import styles from "./product-home-card.module.css";

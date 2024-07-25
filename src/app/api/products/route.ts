@@ -1,15 +1,8 @@
 import { backendApi } from "@/utils/api";
 
-export async function GET(request: Request) {
+export async function GET() {
   try {
-    const { searchParams } = new URL(request.url);
-    const search = searchParams.get("search");
-
-    const { data } = await backendApi.get("/products/search", {
-      params: {
-        search,
-      },
-    });
+    const { data } = await backendApi.get("/products");
 
     return Response.json(data);
   } catch (error) {

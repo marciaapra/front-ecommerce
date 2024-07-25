@@ -1,16 +1,28 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+
 import { IProduct } from "@/interfaces/product.interface";
+import { addItem } from "@/redux/slices/cart.slice";
+
+import PriceTag from "@/components/PriceTag/PriceTag";
+import NameTag from "@/components/NameTag/NameTag";
+import ProductImage from "@/components/ProductImage/ProductImage";
+import Button from "@/components/Button/Button";
+import DescriptionTag from "@/components/DescriptionTag/DescriptionTag";
 
 import styles from "./product-card.module.css";
 
-import PriceTag from "../PriceTag/PriceTag";
-import NameTag from "../NameTag/NameTag";
-import ProductImage from "../ProductImage/ProductImage";
-import Button from "../Button/Button";
-import DescriptionTag from "../DescriptionTag/DescriptionTag";
-
 const ProductCard = ({ product }: { product: IProduct }) => {
+  const router = useRouter();
+  const dispatch = useDispatch();
+
+  const onHandleAddToCart = () => {
+    dispatch(addItem(product));
+    router.push("/cart");
+  };
+
   return (
     <div className={styles["product-card"]}>
       <ProductImage imageUrl={product.image} />
@@ -20,7 +32,7 @@ const ProductCard = ({ product }: { product: IProduct }) => {
           <DescriptionTag description={product.description} />
           <PriceTag price={product.price} />
         </div>
-        <Button text="Adicionar" color="primary" />
+        <Button text="Adicionar" color="primary" onClick={onHandleAddToCart} />
       </div>
     </div>
   );

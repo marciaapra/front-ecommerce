@@ -15,3 +15,8 @@
 .product-list .product-list__button {
     align-self: center;
 }
+
+.product-list-empty {
+    align-self: center;
+    padding: 2.5rem;
+}

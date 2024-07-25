@@ -26,7 +26,7 @@ const ProductHomeList = () => {
   }, []);
 
   const onHandleLoadMore = () => {
-    router.push("product/list");
+    router.push("product");
   };
 
   useEffect(() => {

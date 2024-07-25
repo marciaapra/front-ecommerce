@@ -7,6 +7,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import Navbar from "@/components/Navbar/Navbar";
 import SaleModal from "@/components/SaleModal/SaleModal";
+import StoreProvider from "@/redux/store-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,12 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
-      <body className={inter.className}>
-        <SaleModal />
-        <Navbar />
-        {children}
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang="pt-br">
+        <body className={inter.className}>
+          <SaleModal />
+          <Navbar />
+          {children}
+        </body>
+      </html>
+    </StoreProvider>
   );
 }
