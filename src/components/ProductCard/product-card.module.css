@@ -6,10 +6,6 @@
     transition: 1s;
 }
 
-.product-card .product-card:hover{
-    zoom: 1.1;
-}
-
 .product-card-info {
     display: flex;
     flex-direction: column;

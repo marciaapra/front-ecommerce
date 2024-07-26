@@ -8,4 +8,6 @@
     display: flex;
     background-color: transparent;
     border: none;
+    gap: 0.5rem;
+    cursor: pointer;
 }

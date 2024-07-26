@@ -1,9 +1,12 @@
 "use client";
 
+import { useRouter, useSearchParams } from "next/navigation";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import InputIcon from "@/components/InputIcon/InputIcon";
+
 import styles from "./search.module.css";
 
 const Search = () => {
@@ -24,13 +27,13 @@ const Search = () => {
 
   return (
     <form className={styles["search"]} onSubmit={handleSearch}>
-      <FontAwesomeIcon icon={faMagnifyingGlass} />
-      <input
+      <InputIcon
         type="text"
         name="search"
         placeholder="O que está buscando hoje?"
-        className={styles["search__input"]}
-      />
+      >
+        <FontAwesomeIcon icon={faMagnifyingGlass} />
+      </InputIcon>
     </form>
   );
 };

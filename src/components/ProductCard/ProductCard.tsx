@@ -18,21 +18,23 @@ const ProductCard = ({ product }: { product: IProduct }) => {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const onHandleAddToCart = () => {
+  const handleAddToCart = () => {
     dispatch(addItem(product));
     router.push("/cart");
   };
 
   return (
     <div className={styles["product-card"]}>
-      <ProductImage imageUrl={product.image} />
+      <ProductImage imageUrl={product.image} width={200} height={200} />
       <div className={styles["product-card-info"]}>
         <div className={styles["product-card-info__text"]}>
           <NameTag name={product.name} />
           <DescriptionTag description={product.description} />
           <PriceTag price={product.price} />
         </div>
-        <Button text="Adicionar" color="primary" onClick={onHandleAddToCart} />
+        <Button color="primary" onClick={handleAddToCart}>
+          Adicionar
+        </Button>
       </div>
     </div>
   );

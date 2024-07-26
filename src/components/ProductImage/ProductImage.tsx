@@ -1,16 +1,22 @@
 import Image from "next/image";
-import noImage from "../../assets/no-image.png";
+import noImage from "@/assets/no-image.png";
 
 import styles from "./product-image.module.css";
 
-const ProductImage = ({ imageUrl }: { imageUrl: string }) => {
+interface ProductImageProps {
+  imageUrl: string;
+  width: number;
+  height: number;
+}
+
+const ProductImage = ({ imageUrl, width, height }: ProductImageProps) => {
   return (
     <Image
       className={styles["image"]}
       src={imageUrl !== "" ? imageUrl : noImage}
       alt={"imagem do produto"}
-      width={200}
-      height={200}
+      width={width}
+      height={height}
     />
   );
 };

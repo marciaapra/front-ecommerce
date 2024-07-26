@@ -25,7 +25,7 @@ const ProductHomeList = () => {
     setProducts(productData);
   }, []);
 
-  const onHandleLoadMore = () => {
+  const handleLoadMore = () => {
     router.push("product");
   };
 
@@ -43,7 +43,7 @@ const ProductHomeList = () => {
           <ProductHomeCard product={product} key={`product_${index}`} />
         ))}
       </div>
-      <Button text="Carregar outros" onClick={onHandleLoadMore} />
+      <Button onClick={handleLoadMore}>Carregar outros</Button>
     </div>
   );
 };

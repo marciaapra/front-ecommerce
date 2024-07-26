@@ -8,7 +8,7 @@ const Banner = () => {
       <h2 className={styles["banner__subtitle"]}>
         Aproveite as festas com o melhor da maquiagem Natura
       </h2>
-      <Button text="Comprar agora" />
+      <Button>Comprar agora</Button>
     </div>
   );
 };

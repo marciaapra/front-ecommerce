@@ -1,4 +1,17 @@
 .cart{
-    display: flex;
     padding: 0 4rem;
+}
+
+.cart .cart-container {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.cart-container__div{
+    flex:1;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border: 1px solid var(--gray-light-color);
+    border-radius: 0.625rem;
 }

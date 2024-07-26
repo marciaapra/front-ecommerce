@@ -30,7 +30,7 @@ export default function ProductListPage() {
     setProducts(productData);
   }, [query]);
 
-  const onHandleLoadMore = () => {
+  const handleLoadMore = () => {
     router.push("/product");
   };
 
@@ -53,7 +53,7 @@ export default function ProductListPage() {
       )}
 
       <div className={styles["product-list__button"]}>
-        <Button text="Carregar outros" onClick={onHandleLoadMore} />
+        <Button onClick={handleLoadMore}>Carregar outros</Button>
       </div>
     </div>
   );

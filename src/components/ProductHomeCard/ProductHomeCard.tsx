@@ -10,7 +10,7 @@ import ProductImage from "../ProductImage/ProductImage";
 const ProductHomeCard = ({ product }: { product: IProduct }) => {
   return (
     <div className={styles["product-home-card"]}>
-      <ProductImage imageUrl={product.image} />
+      <ProductImage imageUrl={product.image} width={200} height={200} />
       <NameTag name={product.name} />
       <StarRating rate={product.score} />
       <PriceTag price={product.price} />
