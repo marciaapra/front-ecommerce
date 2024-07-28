@@ -18,3 +18,9 @@
 .product-card-info .product-card-info__text {
     padding: 1rem;
 }
+
+@media(max-width: 768px) {
+    .product-card {
+        flex-wrap: wrap;
+    }
+}
