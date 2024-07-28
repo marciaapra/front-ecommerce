@@ -12,7 +12,7 @@ const ProductHomeCard = ({ product }: { product: IProduct }) => {
     <div className={styles["product-home-card"]}>
       <ProductImage imageUrl={product.image} width={200} height={200} />
       <NameTag name={product.name} />
-      <StarRating rate={product.score} />
+      <StarRating rate={product.rating} />
       <PriceTag price={product.price} />
     </div>
   );

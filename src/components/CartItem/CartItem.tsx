@@ -3,35 +3,36 @@
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { ICartItem } from "@/interfaces/cart.interface";
-
-import ProductImage from "@/components/ProductImage/ProductImage";
-import NameTag from "@/components/NameTag/NameTag";
-import PriceTag from "@/components/PriceTag/PriceTag";
-
-import styles from "./cart-item.module.css";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "@/redux/hooks";
 import {
   decrementQuantity,
   incrementQuantity,
   removeItem,
 } from "@/redux/slices/cart.slice";
-import NumberField from "../NumberField/NumberField";
+
+import { ICartItem } from "@/interfaces/cart.interface";
+
+import ProductImage from "@/components/ProductImage/ProductImage";
+import NameTag from "@/components/NameTag/NameTag";
+import PriceTag from "@/components/PriceTag/PriceTag";
+import NumberField from "@/components/NumberField/NumberField";
+
+import styles from "./cart-item.module.css";
 
 const CartItem = ({ cartItem }: { cartItem: ICartItem }) => {
   const { product } = cartItem;
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const handleRemoveItem = () => {
-    dispatch(removeItem(product._id));
+  const handleRemoveItem = async () => {
+    await dispatch(removeItem(product.id));
   };
 
-  const handleIncrementQuantity = () => {
-    dispatch(incrementQuantity(product._id));
+  const handleIncrementQuantity = async () => {
+    await dispatch(incrementQuantity(product.id));
   };
 
-  const handleDecrementQuantity = () => {
-    dispatch(decrementQuantity(product._id));
+  const handleDecrementQuantity = async () => {
+    await dispatch(decrementQuantity(product.id));
   };
 
   return (

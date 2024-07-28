@@ -1,8 +1,8 @@
 export interface IProduct {
-  _id: string;
+  id: string;
   name: string;
   description: string;
   price: number;
-  score: number;
+  rating: number;
   image: string;
 }

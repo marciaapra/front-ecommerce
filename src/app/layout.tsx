@@ -8,6 +8,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import Navbar from "@/components/Navbar/Navbar";
 import SaleModal from "@/components/SaleModal/SaleModal";
 import StoreProvider from "@/redux/store-provider";
+import { initCart } from "./actions";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  initCart();
   return (
     <StoreProvider>
       <html lang="pt-br">

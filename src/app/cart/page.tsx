@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { useSelector } from "react-redux";
 
 import { RootState } from "@/redux/store";
+import { useAppSelector } from "@/redux/hooks";
 
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import Divisor from "@/components/Divisor/Divisor";
@@ -11,8 +11,9 @@ import CartSummary from "@/components/CartSummary/CartSummary";
 import CartItemList from "@/components/CartItemList/CartItemList";
 
 import styles from "./page.module.css";
+
 export default function Cart() {
-  const { cart } = useSelector((state: RootState) => state.cart);
+  const { cart } = useAppSelector((state: RootState) => state.cart);
 
   const subtotal =
     cart?.items?.reduce((sum, item) => {

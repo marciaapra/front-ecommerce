@@ -1,10 +1,11 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useDispatch } from "react-redux";
 
 import { IProduct } from "@/interfaces/product.interface";
-import { addItem } from "@/redux/slices/cart.slice";
+
+import { addToCart } from "@/redux/slices/cart.slice";
+import { useAppDispatch } from "@/redux/hooks";
 
 import PriceTag from "@/components/PriceTag/PriceTag";
 import NameTag from "@/components/NameTag/NameTag";
@@ -16,10 +17,10 @@ import styles from "./product-card.module.css";
 
 const ProductCard = ({ product }: { product: IProduct }) => {
   const router = useRouter();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const handleAddToCart = () => {
-    dispatch(addItem(product));
+  const handleAddToCart = async () => {
+    await dispatch(addToCart(product));
     router.push("/cart");
   };
 

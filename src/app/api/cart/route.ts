@@ -1,8 +1,10 @@
 import { backendApi } from "@/utils/api";
 
-export async function GET() {
+export async function POST(request: Request) {
   try {
-    const { data } = await backendApi.get("/product");
+    const { params } = await request.json();
+
+    const { data } = await backendApi.post("/cart", params);
 
     return Response.json(data);
   } catch (error) {

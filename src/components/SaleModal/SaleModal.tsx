@@ -7,7 +7,7 @@ import styles from "./sale-modal.module.css";
 import { useState } from "react";
 
 const SaleModal = () => {
-  const [showSaleModal, setShowSaleModal] = useState(true);
+  const [showSaleModal, setShowSaleModal] = useState(false);
 
   const handleCloseModal = () => {
     setShowSaleModal(false);

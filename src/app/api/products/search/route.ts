@@ -5,7 +5,7 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const search = searchParams.get("search");
 
-    const { data } = await backendApi.get("/products/search", {
+    const { data } = await backendApi.get("/product/search", {
       params: {
         search,
       },

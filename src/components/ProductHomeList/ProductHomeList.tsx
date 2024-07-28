@@ -39,7 +39,7 @@ const ProductHomeList = () => {
         Descubra as fragrâncias que combinam com você
       </h1>
       <div className={styles["product-home-list__cards"]}>
-        {products?.map((product, index) => (
+        {products?.slice(0, 4).map((product, index) => (
           <ProductHomeCard product={product} key={`product_${index}`} />
         ))}
       </div>
