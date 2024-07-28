@@ -5,6 +5,7 @@ import Search from "../Search/Search";
 
 import styles from "./navbar.module.css";
 import NavIcons from "../NavIcons/NavIcons";
+import { Suspense } from "react";
 
 const Navbar = () => {
   return (
@@ -13,7 +14,9 @@ const Navbar = () => {
         Cosméticos&Co
       </Link>
       <Menu />
-      <Search />
+      <Suspense>
+        <Search />
+      </Suspense>
       <NavIcons />
     </div>
   );
