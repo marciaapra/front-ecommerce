@@ -2,7 +2,17 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+
+import Navbar from "@/components/Navbar/Navbar";
+import SaleModal from "@/components/SaleModal/SaleModal";
+import StoreProvider from "@/redux/store-provider";
+import { initCart } from "./actions";
+
 const inter = Inter({ subsets: ["latin"] });
+
+config.autoAddCss = false;
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +24,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  initCart();
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <StoreProvider>
+      <html lang="pt-br">
+        <body className={inter.className}>
+          <SaleModal />
+          <Navbar />
+          {children}
+        </body>
+      </html>
+    </StoreProvider>
   );
 }

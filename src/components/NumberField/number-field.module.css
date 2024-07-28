@@ -1,0 +1,29 @@
+.number-field {
+    background-color: var(--gray-light-color);
+    padding: 0.5rem 1rem;
+    border-radius: 1.25rem;
+}
+
+.number-field button, .number-field input {
+    background-color: transparent;
+    border: none;
+}
+
+.number-field button {
+    cursor: pointer;
+}
+
+.number-field input {
+    width: 40px;
+    text-align: center;
+}
+
+.number-field input::-webkit-outer-spin-button,
+.number-field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.number-field input[type=number] {
+  -moz-appearance: textfield;
+}

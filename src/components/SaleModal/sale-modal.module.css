@@ -1,0 +1,30 @@
+.sale-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    padding: 0.2rem;
+    background-color: var(--gray-dark-color);
+    color: var(--primary-color);
+    z-index: 999;
+}
+
+.sale-modal .sale-modal__text{
+    flex: 2;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.sale-modal .sale-modal__close-button{
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    padding: 0 2rem;
+    cursor: pointer;
+}
+
+.sale-modal .sale-modal__close-button svg{
+    color: var(--primary-color);
+}

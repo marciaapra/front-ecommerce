@@ -1,0 +1,10 @@
+.product-home-card {
+    flex: 1;
+    padding: 2rem;
+    word-break: break-word;
+    transition: 1s;
+}
+
+.product-home-card:hover{
+    zoom: 1.1;
+}

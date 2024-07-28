@@ -1,0 +1,23 @@
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0.5rem 0;
+    gap: 5px;
+    font-size: 0.75rem;
+    align-items: center;
+}
+
+.breadcrumb .breadcrumb__li {
+    color: var(--gray-dark-color)
+    
+}
+
+.breadcrumb .breadcrumb__separator{
+    color: var(--gray-dark-color);
+    font-size: 0.625rem;
+}
+
+.breadcrumb .breadcrumb__li .breadcrumb__li--active {
+    color: var(--secondary-color);
+}

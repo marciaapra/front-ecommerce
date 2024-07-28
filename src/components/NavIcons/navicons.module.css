@@ -1,0 +1,6 @@
+.navicons {
+    display: flex; 
+    position: relative; 
+    align-items: center; 
+    gap: 1rem; 
+}

@@ -1,0 +1,7 @@
+.price {
+    font-weight: bold;
+}
+
+.price--danger {
+    color: #f00;
+}
