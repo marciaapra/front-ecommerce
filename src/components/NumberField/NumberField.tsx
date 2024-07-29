@@ -3,7 +3,6 @@
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import style from "./number-field.module.css";
-import { useState } from "react";
 
 interface NumberFieldProps {
   value: number;
@@ -16,19 +15,16 @@ const NumberField = ({
   onIncrease = () => {},
   onDecrease = () => {},
 }: NumberFieldProps) => {
-  const [inputValue, setInputValue] = useState(value);
   const minValue = 1;
 
   const increaseValue = () => {
-    if (inputValue) {
-      setInputValue(inputValue + 1);
+    if (value) {
       onIncrease();
     }
   };
 
   const decreaseValue = () => {
-    if (inputValue > minValue) {
-      setInputValue(inputValue - 1);
+    if (value > minValue) {
       onDecrease();
     }
   };
@@ -38,7 +34,7 @@ const NumberField = ({
       <button onClick={decreaseValue}>
         <FontAwesomeIcon icon={faMinus} />
       </button>
-      <input type="number" disabled min={minValue} value={inputValue} />
+      <input type="number" disabled min={minValue} value={value} />
       <button onClick={increaseValue}>
         <FontAwesomeIcon icon={faPlus} />
       </button>
