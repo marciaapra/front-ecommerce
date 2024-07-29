@@ -18,6 +18,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    min-width: 200px;
 }
 
 .cart-item .cart-item-content .cart-item-info p {
@@ -29,5 +30,11 @@
     border: none;
     color: #f00;
     cursor: pointer;
+}
+
+@media(max-width: 480px) {
+    .cart-item .cart-item-content .cart-item-info{
+        flex-wrap: wrap;
+    }
 }
 

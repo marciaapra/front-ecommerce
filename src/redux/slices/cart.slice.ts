@@ -89,7 +89,7 @@ export const removeItem = createAsyncThunk(
     const state = store.getState() as RootState;
     const { cart } = state.cart;
     const item = cart?.items.find((item) => item.product.id === idProduct);
-    if (cart && item && item.quantity > 1) {
+    if (cart && item) {
       const { data } = await api.delete(`/cart/${cart.id}/item/${item.id}`);
       return data;
     }
